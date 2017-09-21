@@ -1,0 +1,17 @@
+https://git-for-windows.github.io/
+https://tortoisegit.org/download/
+
+https://angular.io/guide/quickstart
+https://code.visualstudio.com/updates/v1_15#_windows-64-bit
+https://nodejs.org/en/    --> V8.5.0
+
+https://www.mysql.com/downloads/
+MySQL Workbench 6.3
+MySQL Database 5.7
+
+Commands
+-------------
+npm install -g @angular/cli
+ng new payroll
+cd payroll
+ng serve --open
