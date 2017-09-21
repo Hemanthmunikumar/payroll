@@ -9,9 +9,16 @@ https://www.mysql.com/downloads/
 MySQL Workbench 6.3
 MySQL Database 5.7
 
+https://developer.telerik.com/featured/quick-angular-2-hosting-angular-cli-github-pages/
+Main Links
+--------------
+https://appdividend.com/2017/06/14/integrate-admin-template-in-angular-4-application/
+
 Commands
 -------------
 npm install -g @angular/cli
 ng new payroll
 cd payroll
 ng serve --open
+
+
