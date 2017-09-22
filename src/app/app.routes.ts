@@ -1,7 +1,7 @@
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
-import { EmployregisterComponent } from './employregister/employregister.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { RegisterComponent } from './components/employee/register/register.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 // import { LOGIN_SERVICE_PROVIDERS } from './login/login.routes';
 // import { DASHBOARD_ROUTER_PROVIDERS, EclipseRoutes } from './eclipse.routes';
 // import { LogoutComponent } from './login/logout.component';
@@ -13,7 +13,7 @@ import { NotFoundComponent } from './shared/notfound/notfound.component';
 export const routes: Routes = [
     { path: '', component: LoginComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'register', component: EmployregisterComponent },
+    { path: 'register', component: RegisterComponent },
     { path: 'dashboard', component: DashboardComponent },
     { path: 'home', component: DashboardComponent },
     //{ path: 'logout', component: LogoutComponent },

@@ -2,15 +2,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { ContentComponent } from './content/content.component';
-import { EmployregisterComponent } from './employregister/employregister.component';
-import { FooterComponent } from './footer/footer.component';
+import { NavbarComponent } from './shared/layout/navbar/navbar.component';
+import { SidebarComponent } from './shared/layout/sidebar/sidebar.component';
+import { ContentComponent } from './components/content/content.component';
+import { RegisterComponent } from './components/employee/register/register.component';
+import { FooterComponent } from './shared/layout/footer/footer.component';
 import { APP_ROUTER_PROVIDERS, routes } from './app.routes';
 import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './shared/notfound/notfound.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     NavbarComponent,
     SidebarComponent,
     ContentComponent,
-    EmployregisterComponent,
+    RegisterComponent,
     FooterComponent,LoginComponent,NotFoundComponent,DashboardComponent
   ],
   imports: [
