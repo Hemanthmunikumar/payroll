@@ -20,6 +20,14 @@ export const EmployeeRoutes: Routes = [
                     {
                         path: 'dashboard',
                         component: DashboardComponent
+                    },
+                    {
+                        path: 'list',
+                        component: ListComponent
+                    },
+                    {
+                        path: 'register',
+                        component: RegisterComponent
                     }
                 ],
             },
