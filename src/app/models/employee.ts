@@ -19,4 +19,5 @@ export interface IEmployee {
     cretedBy: string,
     modifiedDate: Date,
     modifiedBy: string
+    
 }
