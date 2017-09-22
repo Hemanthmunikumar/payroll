@@ -11,6 +11,7 @@ import { APP_ROUTER_PROVIDERS, routes } from './app.routes';
 import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './shared/notfound/notfound.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { PayrollComponent  } from './components/payroll.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     SidebarComponent,
     ContentComponent,
     RegisterComponent,
-    FooterComponent,LoginComponent,NotFoundComponent,DashboardComponent
+    FooterComponent,LoginComponent,NotFoundComponent,DashboardComponent,PayrollComponent
   ],
   imports: [
     BrowserModule,APP_ROUTER_PROVIDERS
