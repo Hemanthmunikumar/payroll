@@ -7,6 +7,10 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { ContentComponent } from './content/content.component';
 import { EmployregisterComponent } from './employregister/employregister.component';
 import { FooterComponent } from './footer/footer.component';
+import { APP_ROUTER_PROVIDERS, routes } from './app.routes';
+import { LoginComponent } from './login/login.component';
+import { NotFoundComponent } from './shared/notfound/notfound.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -15,10 +19,10 @@ import { FooterComponent } from './footer/footer.component';
     SidebarComponent,
     ContentComponent,
     EmployregisterComponent,
-    FooterComponent
+    FooterComponent,LoginComponent,NotFoundComponent,DashboardComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,APP_ROUTER_PROVIDERS
   ],
   providers: [],
   bootstrap: [AppComponent]
