@@ -8,6 +8,7 @@ export class EmployeeService {
     constructor(private _http:Http){
 
     }
+    
     getList(){
         return this._http.get('https://jsonplaceholder.typicode.com/posts');
     }
