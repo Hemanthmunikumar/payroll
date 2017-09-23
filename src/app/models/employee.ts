@@ -1,7 +1,8 @@
 export interface IEmployee {
     id: number,
     empId: number,
-    assword: string,
+    name :string,
+    password: string,
     fatherName: string,
     mobileNo: string,
     email: string,
@@ -15,6 +16,7 @@ export interface IEmployee {
     idProofs: string,
     aboutUs: string,
     isActive: boolean,
+    isDeleted:boolean,
     createdDate: Date,
     cretedBy: string,
     modifiedDate: Date,
