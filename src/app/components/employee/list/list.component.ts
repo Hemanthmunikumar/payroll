@@ -19,7 +19,7 @@ export class ListComponent implements OnInit {
     // this.employeeService.getemployList().subscribe((result)=>{
     //   console.log(result);
     // });
-    this.employeeService.getemployeeList()
+    this.employeeService.getEmployeeList()
       .subscribe(employees => { this.employees = employees;},
       error => this.errorMessage = <any>error);
   }

@@ -1,5 +1,5 @@
 import { Injectable, Inject } from '@angular/core';
-import { Http, Response, Headers } from '@angular/http';
+import { Http, Response, Headers,RequestOptions  } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
@@ -17,13 +17,21 @@ export class EmployeeService {
     getemployList(){
         return this._http.get(constants.serviceurl+constants.employeedata);
     }
-    getemployeeList(): Observable<IEmployee[]> {
+    getEmployeeList(): Observable<IEmployee[]> {
         return this._http.get(constants.serviceurl+constants.employeedata)
             .map((response: Response) => <IEmployee[]> response.json())
             .do(data => console.log('All: ' +  JSON.stringify(data)))
             .catch(this.handleError);
     }
 
+ insertEmployee(IEmployee:IEmployee): Observable<IEmployee> {
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+    return this._http.post(constants.serviceurl+constants.addemployee,IEmployee,options)
+        .map((response: Response) => <IEmployee> response.json())
+        .do(data => console.log('All: ' +  JSON.stringify(data)))
+        .catch(this.handleError);
+}
     private handleError(error: Response) {
         console.error(error);
         return Observable.throw(error.json().error || 'Server error');

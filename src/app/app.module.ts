@@ -11,6 +11,8 @@ import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './shared/notfound/notfound.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PayrollComponent  } from './components/payroll.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 // import { SharedModule } from './shared/shared.module';
 // import { FormsModule } from '@angular/forms';
 
@@ -23,7 +25,7 @@ import { PayrollComponent  } from './components/payroll.component';
     FooterComponent,LoginComponent,NotFoundComponent,DashboardComponent,PayrollComponent
   ],
   imports: [
-    BrowserModule,APP_ROUTER_PROVIDERS,HttpModule
+    BrowserModule,APP_ROUTER_PROVIDERS,HttpModule,BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
