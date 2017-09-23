@@ -47,7 +47,7 @@ export class RegisterComponent implements OnInit {
     console.log(this.employee);
     this.employeeService.insertEmployee(this.employee).subscribe(result => {
       console.log(result);
-      this.summarytext="Sucess";
+      this.summarytext="Success Message";
       this.detailstext="Employee created sucessfully.";
       this.severitytext="success";
       this.AddMessage();
@@ -66,7 +66,7 @@ export class RegisterComponent implements OnInit {
   }
   clear() {
     this.msgs = [];
-    this.messageService.clear();
+    //this.messageService.clear();
   }
 
 }
