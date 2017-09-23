@@ -13,16 +13,16 @@ export class ListComponent implements OnInit {
   errorMessage: string;
 
   employees: IEmployee[];
-  constructor(private employeeService:EmployeeService) { }
+  constructor(private employeeService: EmployeeService) { }
 
   ngOnInit() {
-      // this.employeeService.getemployList().subscribe((result)=>{
-      //   console.log(result);
-      // });
-      this.employeeService.getemployeeList()
-      .subscribe(employees => this.employees = employees,
-                 error => this.errorMessage = <any>error);
+    // this.employeeService.getemployList().subscribe((result)=>{
+    //   console.log(result);
+    // });
+    this.employeeService.getemployeeList()
+      .subscribe(employees => { this.employees = employees;},
+      error => this.errorMessage = <any>error);
   }
-  
+
 
 }

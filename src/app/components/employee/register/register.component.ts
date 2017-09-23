@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EmployeeService } from '../../../services/employee.service';
+import { IEmployee } from '../../../models/employee';
 
 @Component({
   selector: 'employee-register',
@@ -6,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
   // styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  pageTitle: string = 'Add Employee';  
+  errorMessage: string;
 
-  constructor() { }
+  employees: IEmployee[];
+  constructor(private employeeService: EmployeeService) { }
 
   ngOnInit() {
   }

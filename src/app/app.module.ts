@@ -11,7 +11,8 @@ import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './shared/notfound/notfound.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PayrollComponent  } from './components/payroll.component';
-import { SharedModule } from './shared/shared.module';
+// import { SharedModule } from './shared/shared.module';
+// import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { SharedModule } from './shared/shared.module';
     FooterComponent,LoginComponent,NotFoundComponent,DashboardComponent,PayrollComponent
   ],
   imports: [
-    BrowserModule,APP_ROUTER_PROVIDERS,HttpModule,SharedModule
+    BrowserModule,APP_ROUTER_PROVIDERS,HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

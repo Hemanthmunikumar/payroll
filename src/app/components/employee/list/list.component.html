@@ -12,6 +12,16 @@
         <i class="fa fa-table"></i> {{pageTitle}}</div>
       <div class="card-body">
         <div class="table-responsive">
+            <div class='row'>
+                <div class='col-md-2'>Filter by:</div>
+                <div class='col-md-4'>
+                    <input type='text' [(ngModel)]='listFilter' />
+                </div>
+                <div class='col-md-6'>
+                    <div>Filtered by: {{listFilter}} </div>
+                </div>
+            </div>
+            
           <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
               <tr>
@@ -34,7 +44,7 @@
               </tr>
             </tfoot>
            <tbody>
-          <tr *ngFor='let employee of employees'>
+          <tr *ngFor='let employee of employees  | employeeFilter:listFilter'>
               <td>
                   <a [routerLink]="['/payroll', employee.empId]"> {{employee.empId}}</a>
               </td>
