@@ -28,6 +28,10 @@ export const EmployeeRoutes: Routes = [
                     {
                         path: 'register',
                         component: RegisterComponent
+                    },
+                    {
+                        path: 'register/:empid',
+                        component: RegisterComponent
                     }
                 ],
             },

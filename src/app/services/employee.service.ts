@@ -24,6 +24,18 @@ export class EmployeeService {
             .catch(this.handleError);
     }
 
+    getEmployeeDetails(empid:number): Observable<IEmployee[]> {
+        let myHeaders = new Headers();
+        myHeaders.append('Content-Type', 'application/json');    
+        let myParams = new URLSearchParams();
+        myParams.append('empId', empid.toString());	
+        let options = new RequestOptions({ headers: myHeaders, params: myParams });
+        return this._http.get(constants.serviceurl+constants.employeedetails,options)
+            .map((response: Response) => <IEmployee[]> response.json())
+            .do(data => console.log('employee: ' +  JSON.stringify(data)))
+            .catch(this.handleError);
+    }
+
  insertEmployee(IEmployee:IEmployee): Observable<IEmployee> {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });

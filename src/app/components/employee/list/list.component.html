@@ -46,7 +46,7 @@
            <tbody>
           <tr *ngFor='let employee of employees  | employeeFilter:listFilter'>
               <td>
-                  <a [routerLink]="['/payroll', employee.empId]"> {{employee.empId}}</a>
+                  <a [routerLink]="['/payroll/employee/register', employee.empId]"> {{employee.empId}}</a>
               </td>
               <td>{{employee.name}}</td>                
               <td>{{ employee.mobileNo }}</td>

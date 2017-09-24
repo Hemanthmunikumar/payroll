@@ -1,113 +1,132 @@
 <div class="container-fluid">
-    <!-- Breadcrumbs-->
-    <!-- <ol class="breadcrumb">
+  <!-- Breadcrumbs-->
+  <!-- <ol class="breadcrumb">
       <li class="breadcrumb-item">
         <a href="/payroll">Dashboard</a>
       </li>
       <li class="breadcrumb-item active">Employee</li>
     </ol> -->
-    <div class="card mb-3">
-      <div class="card-header">{{pageTitle}}</div>
-      <div class="card-body">
-        <!-- <form> -->
-          <div class="form-group">
-            <div class="form-row">
-              <div class="col-md-4">
-                <label for="exampleInputName">Name</label>
-                <input class="form-control" id="name" type="text" aria-describedby="nameHelp" placeholder="Enter Name" [(ngModel)]="employee.name">
-              </div>
-              <div class="col-md-4">
-                <label for="exampleInputLastName">Father Name</label>
-                <input class="form-control" id="fatherName" type="text" aria-describedby="nameHelp" placeholder="Enter Father Name" [(ngModel)]="employee.fatherName">
-              </div>
-              <div class="col-md-4">
-                  <label for="exampleInputName">Mobile No</label>
-                  <input class="form-control" id="mobileNo" type="text" aria-describedby="mobileHelp" placeholder="Enter Mobile No" [(ngModel)]="employee.mobileNo">
-                </div>
-            </div>
+  <div class="card mb-3">
+    <div class="card-header">{{pageTitle}}</div>
+    <div class="card-body">
+      <!-- <form> -->
+      <div class="form-group">
+        <div class="form-row">
+          <div class="col-md-4">
+            <label for="exampleInputName">Name</label>
+            <input class="form-control" id="name" type="text" aria-describedby="nameHelp" placeholder="Enter Name" [(ngModel)]="employee.name">
           </div>
-          <div class="form-group">
-              <div class="form-row">
-               
-                <div class="col-md-4">
-                  <label for="exampleInputLastName">Email</label>
-                  <input class="form-control" id="email" type="text" aria-describedby="emailHelp" placeholder="Enter Email" [(ngModel)]="employee.email">
-                </div>
-                <div class="col-md-4">
-                    <label for="exampleInputName">Department</label>
-                    <!-- <input class="form-control" id="department" type="text" aria-describedby="nameHelp" placeholder="Enter Mobile No" [(ngModel)]="employee.department"> -->
-                    <select [(ngModel)]="employee.department" class="form-control">
+          <div class="col-md-4">
+            <label for="exampleInputLastName">Father Name</label>
+            <input class="form-control" id="fatherName" type="text" aria-describedby="nameHelp" placeholder="Enter Father Name" [(ngModel)]="employee.fatherName">
+          </div>
+          <div class="col-md-4">
+            <label for="exampleInputName">Mobile No</label>
+            <input class="form-control" id="mobileNo" type="text" aria-describedby="mobileHelp" placeholder="Enter Mobile No" [(ngModel)]="employee.mobileNo">
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-row">
+
+          <div class="col-md-4">
+            <label for="exampleInputLastName">Email</label>
+            <input class="form-control" id="email" type="text" aria-describedby="emailHelp" placeholder="Enter Email" [(ngModel)]="employee.email">
+          </div>
+          <div class="col-md-4">
+            <label for="exampleInputName">Department</label>
+            <!-- <input class="form-control" id="department" type="text" aria-describedby="nameHelp" placeholder="Enter Mobile No" [(ngModel)]="employee.department"> -->
+            <select [(ngModel)]="employee.department" class="form-control">
                         <option *ngFor="let c of departments" [ngValue]="c.id">{{c.name}}</option>
                       </select>
-                  </div>
-                  <div class="col-md-4">
-                      <label for="exampleInputLastName">Designation</label>
-                      <!-- <input class="form-control" id="designation" type="text" aria-describedby="emailHelp" placeholder="Enter Designation" [(ngModel)]="employee.designation"> -->
-                      <select [(ngModel)]="employee.designation" class="form-control">
+          </div>
+          <div class="col-md-4">
+            <label for="exampleInputLastName">Designation</label>
+            <!-- <input class="form-control" id="designation" type="text" aria-describedby="emailHelp" placeholder="Enter Designation" [(ngModel)]="employee.designation"> -->
+            <select [(ngModel)]="employee.designation" class="form-control">
                           <option *ngFor="let d of designation" [ngValue]="d.id">{{d.name}}</option>
                         </select>
-                    </div>
-              </div>
-            </div>
-         
-              <div class="form-group">
-                  <div class="form-row">
-                      <div class="col-md-4">
-                          <label for="exampleInputLastName">Experience</label>
-                          <input class="form-control" id="experience" type="text" aria-describedby="emailHelp" placeholder="Enter Experience" [(ngModel)]="employee.experience">
-                        </div>
-                    <div class="col-md-4">
-                      <label for="exampleInputName">Date of Birth</label>
-                      <p-calendar class="form-control" [showIcon]="true" [(ngModel)]="employee.dateofBirth" [monthNavigator]="true" [yearNavigator]="true" yearRange="1900:2020" dateFormat="dd/mm/yy"></p-calendar>
-                      <!-- <input class="form-control" id="dateofBirth" type="text" aria-describedby="nameHelp" placeholder="Enter DateofBirth" [(ngModel)]="employee.dateofBirth"> -->
-                    </div>
-                    <div class="col-md-4">
-                      <label for="exampleInputLastName">Date of Join</label>
-                      <p-calendar class="form-control" [showIcon]="true" [(ngModel)]="employee.dateofJoin" [monthNavigator]="true" [yearNavigator]="true" yearRange="1900:2020" dateFormat="dd/mm/yy"></p-calendar>
-                      <!-- <input class="form-control" id="dateofJoin" type="text" aria-describedby="emailHelp" placeholder="Enter Designation" [(ngModel)]="employee.dateofJoin"> -->
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                    <div class="form-row">
-                      <div class="col-md-4">
-                        <label for="exampleInputName">Address</label>
-                        <textarea  class="form-control"  rows="2"  id="address" type="text" aria-describedby="nameHelp" placeholder="Enter Address" [(ngModel)]="employee.address" required></textarea>
-                      </div>
-                      <div class="col-md-4">
-                          <label for="exampleInputEmail1">About Employee</label>
-                          <textarea  class="form-control"  rows="2"  id="aboutUs" type="textarea" aria-describedby="nameHelp" placeholder="Enter about employee" [(ngModel)]="employee.aboutUs" ></textarea>
-                      </div>
-                      <div class="col-md-4">
-                         
-                          <label for="exampleInputName">Date of Releave</label>
-                          <!-- <input class="form-control" id="dateofReleave" type="text" aria-describedby="nameHelp" placeholder="Enter dateofReleave" [(ngModel)]="employee.dateofReleave"> -->
-                          <p-calendar class="form-control" [showIcon]="true" [(ngModel)]="employee.dateofReleave" [monthNavigator]="true" [yearNavigator]="true" yearRange="1900:2020" dateFormat="dd/mm/yy"></p-calendar>
-                         
-                          
-                        </div> 
-                    </div>
-                  </div>
-<div class="form-group">
-              <div class="form-row"> 
-                               
-                  <div class="col-md-4">
-                      <label for="exampleInputLastName">Active Employee</label>
-                      <input  class="form-control" type="checkbox" [checked]="employee.isActive" (change)="employee.isActive = !employee.isActive" />
-                      <!-- <input class="form-control" id="experience" type="text" aria-describedby="emailHelp" placeholder="Enter Experience" [(ngModel)]="employee.isActive"> -->
-                    </div>        
-              <div class="col-md-4">
-                  <a class="btn btn-primary btn-block" (click)="submitEmployee()">Register</a>
-                  
-              </div>
-              <div class="col-md-4">
-                  
-                  <a class="btn btn-primary btn-block" href="/payroll">Cancel</a>
-              </div>
-            </div>
-          </div> 
-      
-          <!-- <div class="form-group">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-row">
+          <div class="col-md-4">
+            <label for="exampleInputLastName">Experience</label>
+            <input class="form-control" id="experience" type="text" aria-describedby="emailHelp" placeholder="Enter Experience" [(ngModel)]="employee.experience">
+          </div>
+          <div class="col-md-4">
+            <label for="exampleInputName">Date of Birth</label>
+            <p-calendar class="form-control" [showIcon]="true" [(ngModel)]="employee.dateofBirth" [monthNavigator]="true" [yearNavigator]="true"
+              yearRange="1900:2020" dateFormat="dd/mm/yy"></p-calendar>
+            <!-- <input class="form-control" id="dateofBirth" type="text" aria-describedby="nameHelp" placeholder="Enter DateofBirth" [(ngModel)]="employee.dateofBirth"> -->
+          </div>
+          <div class="col-md-4">
+            <label for="exampleInputLastName">Date of Join</label>
+            <p-calendar class="form-control" [showIcon]="true" [(ngModel)]="employee.dateofJoin" [monthNavigator]="true" [yearNavigator]="true"
+              yearRange="1900:2020" dateFormat="dd/mm/yy"></p-calendar>
+            <!-- <input class="form-control" id="dateofJoin" type="text" aria-describedby="emailHelp" placeholder="Enter Designation" [(ngModel)]="employee.dateofJoin"> -->
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-row">
+          <div class="col-md-4">
+            <label for="exampleInputName">Address</label>
+            <textarea class="form-control" rows="2" id="address" type="text" aria-describedby="nameHelp" placeholder="Enter Address"
+              [(ngModel)]="employee.address" required></textarea>
+          </div>
+          <div class="col-md-4">
+            <label for="exampleInputEmail1">About Employee</label>
+            <textarea class="form-control" rows="2" id="aboutUs" type="textarea" aria-describedby="nameHelp" placeholder="Enter about employee"
+              [(ngModel)]="employee.aboutUs"></textarea>
+          </div>
+          <div class="col-md-4">
+
+            <label for="exampleInputName">Date of Releave</label>
+            <!-- <input class="form-control" id="dateofReleave" type="text" aria-describedby="nameHelp" placeholder="Enter dateofReleave" [(ngModel)]="employee.dateofReleave"> -->
+            <p-calendar class="form-control" [showIcon]="true" [(ngModel)]="employee.dateofReleave" [monthNavigator]="true" [yearNavigator]="true"
+              yearRange="1900:2020" dateFormat="dd/mm/yy"></p-calendar>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-row">
+          <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)" 
+          multiple="multiple" accept="image/*" maxFileSize="1000000">
+      <ng-template pTemplate type="content">
+          <ul *ngIf="uploadedFiles.length">
+              <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+          </ul>
+      </ng-template>        
+  </p-fileUpload>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-row">
+
+          <div class="col-md-4">
+            <label for="exampleInputLastName">Active Employee</label>
+            <input class="form-control" type="checkbox" [checked]="employee.isActive" (change)="employee.isActive = !employee.isActive"
+            />
+            <!-- <input class="form-control" id="experience" type="text" aria-describedby="emailHelp" placeholder="Enter Experience" [(ngModel)]="employee.isActive"> -->
+          </div>
+          <div class="col-md-4">
+            <a class="btn btn-primary btn-block" (click)="submitEmployee()">Register</a>
+
+          </div>
+          <div class="col-md-4">
+
+            <a class="btn btn-primary btn-block" href="/payroll">Cancel</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
                 <label for="exampleInputPassword1">Password</label>
@@ -119,14 +138,13 @@
               </div>
             </div>
           </div> -->
-         
-          <p-messages [(value)]="msgs"></p-messages>
-        <!-- </form> -->
-        <!-- <div class="text-center">
+
+      <p-messages [(value)]="msgs"></p-messages>
+      <!-- </form> -->
+      <!-- <div class="text-center">
           <a class="d-block small mt-3" href="login.html">Login Page</a>
           <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
         </div> -->
-      </div>
     </div>
-    </div>
-  
+  </div>
+</div>

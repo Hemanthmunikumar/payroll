@@ -23,6 +23,10 @@ export class ListComponent implements OnInit {
       .subscribe(employees => { this.employees = employees;},
       error => this.errorMessage = <any>error);
   }
-
+  EditEmployee(empid)
+  {
+    console.log(empid);
+    
+  }
 
 }
