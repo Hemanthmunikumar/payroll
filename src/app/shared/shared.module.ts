@@ -2,16 +2,17 @@ import { NgModule }  from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {CalendarModule} from 'primeng/primeng';
-
+import { MessagesModule} from 'primeng/primeng'
 
 
 @NgModule({
    
-    imports: [ CommonModule ,CalendarModule],
+    imports: [ CommonModule ,CalendarModule, MessagesModule],
     exports: [
         CommonModule,
         FormsModule,
-        CalendarModule
+        CalendarModule,
+        MessagesModule
     ]
 })
 export class SharedModule { }
