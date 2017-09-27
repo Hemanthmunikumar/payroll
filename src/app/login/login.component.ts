@@ -29,16 +29,26 @@ export class LoginComponent implements OnInit {
     console.log(this.employee);
     this.employeeService.loginEmployee(this.employee).subscribe(result => {
       console.log(result);
-      this.summarytext="Success Message";
-      this.detailstext="Login sucessfully.";
-      this.severitytext="success";
+      if(result["status"])
+      {        
+        // this.summarytext="";
+        // this.detailstext="Login sucessfully.";
+        // this.severitytext="success";  
+        this.router.navigate(['/payroll/dashboard']);     
+      }
+      else  
+      {        
+        this.summarytext="";
+        this.detailstext="Please check creditionals.";
+        this.severitytext="error";        
+      }
       this.AddMessage();
-      setTimeout(() => {
-        this.clear();
-        this.employee = <IEmployee>{};
-        this.router.navigate(['/payroll/dashboard']);
-        //href="/payroll/dashboard"
-      }, 3000);
+      // setTimeout(() => {
+      //   this.clear();
+      //   this.employee = <IEmployee>{};
+      //   this.router.navigate(['/payroll/dashboard']);
+      //   //href="/payroll/dashboard"
+      // }, 3000);
     },
       error =>{ this.errorMessage = <any>error;
         this.summarytext="Error Message";

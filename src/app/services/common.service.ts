@@ -18,14 +18,14 @@ export class CommonService {
     getDepartmentsList(): Observable<IDepartments[]> {
         return this._http.get(constants.serviceurl+constants.departmentsdata)
             .map((response: Response) => <IDepartments[]> response.json())
-            .do(data => console.log('All: ' +  JSON.stringify(data)))
+            //.do(data => console.log('All: ' +  JSON.stringify(data)))
             .catch(this.handleError);
     }
  
     getDesignationsList(): Observable<IDesignation[]> {
         return this._http.get(constants.serviceurl+constants.designationsdata)
             .map((response: Response) => <IDesignation[]> response.json())
-            .do(data => console.log('All: ' +  JSON.stringify(data)))
+           // .do(data => console.log('All: ' +  JSON.stringify(data)))
             .catch(this.handleError);
     }
 

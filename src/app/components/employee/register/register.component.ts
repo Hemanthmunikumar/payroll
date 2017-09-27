@@ -55,7 +55,7 @@ export class RegisterComponent implements OnInit {
     if(this.employee.empId!=undefined)
     {
     this.employeeService.getEmployeeDetails(this.employee.empId)
-    .subscribe(employee => { this.employees = employee;},
+    .subscribe(employee => { this.employee = employee;},
       error => this.errorMessage = <any>error);
     }
   }
