@@ -10,15 +10,20 @@ import { IEmployee } from '../models/employee';
 
 @Injectable()
 export class EmployeeService {
+    private _storage: Storage;
     constructor(private _http:Http){
-
+        this._storage = sessionStorage;
     }
     
     // getemployList(){
     //     return this._http.get(constants.serviceurl+constants.employeedata);
     // }
     getEmployeeList(): Observable<IEmployee[]> {
-        return this._http.get(constants.serviceurl+constants.employeedata)
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        headers.append('Authorization', 'JWT ' + this.getAccessToken());
+    let options = new RequestOptions({ headers: headers });
+
+        return this._http.get(constants.serviceurl+constants.employeedata, options)
             .map((response: Response) => <IEmployee[]> response.json())
            // .do(data => console.log('All: ' +  JSON.stringify(data)))
             .catch(this.handleError);
@@ -52,6 +57,18 @@ loginEmployee(IEmployee:IEmployee): Observable<IEmployee> {
         .map((response: Response) => <any> response.json())
         .do(data => console.log('All: ' +  JSON.stringify(data)))
         .catch(this.handleError);
+}
+
+setAccessToken(token){
+    this._storage.setItem("token",token)
+}
+
+getAccessToken(){
+    return this._storage.getItem("token");
+}
+
+logout(){
+    this._storage.removeItem("token");
 }
 
 

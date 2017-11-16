@@ -5,7 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 // import { LOGIN_SERVICE_PROVIDERS } from './login/login.routes';
 // import { DASHBOARD_ROUTER_PROVIDERS, EclipseRoutes } from './eclipse.routes';
-// import { LogoutComponent } from './login/logout.component';
+import { LogoutComponent } from './login/logout.component';
 // import { NotAuthorizedComponent } from './shared/notauthorized/notauthorized.component';
 import { NotFoundComponent } from './shared/notfound/notfound.component';
 // import { PreloadSelectedModules } from './core/module.preload.strategy';
@@ -16,7 +16,7 @@ export const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'dashboard', component: DashboardComponent },
     { path: 'home', component: DashboardComponent },
-    //{ path: 'logout', component: LogoutComponent },
+    { path: 'logout', component: LogoutComponent },
     //{ path: 'authorize/:accessToken', component: AuthorizeComponent },
     ...PayrollRoutes,
     //{ path: 'notauthorized', component: NotAuthorizedComponent },

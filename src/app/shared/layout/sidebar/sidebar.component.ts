@@ -11,9 +11,4 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  navigate(moduleName){
-    alert(moduleName);
-  }
-
 }

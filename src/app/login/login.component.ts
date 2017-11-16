@@ -34,7 +34,8 @@ export class LoginComponent implements OnInit {
         // this.summarytext="";
         // this.detailstext="Login sucessfully.";
         // this.severitytext="success";  
-        this.router.navigate(['/payroll/dashboard']);     
+        this.employeeService.setAccessToken(result["data"]["token"]);   
+        this.router.navigate(['/payroll/dashboard']);  
       }
       else  
       {        
